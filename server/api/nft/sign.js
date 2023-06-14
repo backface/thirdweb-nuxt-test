@@ -1,13 +1,5 @@
 import { ThirdwebSDK } from '@thirdweb-dev/sdk'
-// import { NFTStorage } from 'nft.storage'
 
-function baseName(str)
-{
-   var base = new String(str).substring(str.lastIndexOf('/') + 1); 
-    if(base.lastIndexOf(".") != -1)       
-        base = base.substring(0, base.lastIndexOf("."));
-   return base;
-}
 
 export default defineEventHandler(async (event) => {
     try {
@@ -19,8 +11,7 @@ export default defineEventHandler(async (event) => {
 
         const sdk = ThirdwebSDK.fromPrivateKey(config.ETH_PRIVATE_KEY, "goerli");  
         const collection = await sdk.getContract(config.public.nftcontract);
-        const nfts = await collection.erc721.getAll()
-
+        
         const signedPayload = await collection.erc721.signature.generate({
             to: address,
             metadata: {
