@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     ETH_PRIVATE_KEY: process.env.ETH_PRIVATE_KEY,
     public: {
-      nftchain: 5,
+      nftchainId: 5,
+      nftchain: 'goerli',
       nftcontract: process.env.ETH_CONTRACT
     }
   },

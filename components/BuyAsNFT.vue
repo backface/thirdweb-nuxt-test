@@ -27,7 +27,7 @@ const buy = async () => {
         console.log("change")
     })
 
-    await wallet.connect({chainId: config.nftchain}).catch((e) => {
+    await wallet.connect({chainId: config.nftchainId}).catch((e) => {
         message.value = e;
         console.log(e)
     });
