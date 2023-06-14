@@ -1,5 +1,7 @@
 # thirdweb-nuxt-test on Nuxt 3 Minimal Starter
 
+[Signature-based Minting / On-Demand Minting](https://portal.thirdweb.com/glossary/signature-based-minting) with Nuxt.
+
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) and the 
  [thirdweb documentation](https://portal.thirdweb.com/) to learn more.
 
