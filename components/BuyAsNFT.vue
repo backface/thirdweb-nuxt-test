@@ -7,25 +7,22 @@ const props = defineProps(['image', 'name', 'desc'])
 const message = ref("")
 const wallet = new MetaMaskWallet()
 
+wallet.on("connect", () => {
+    console.log("connected")
+});
+
+wallet.on("error", () => {
+    console.log("error")
+})
+
+wallet.on("change", () => {
+    console.log("change")
+})
+
+
 const buy = async () => {  
 
     message.value = "connecting to wallet..."
-
-    wallet.on("connect", () => {
-        console.log("connected")
-    });
-
-    wallet.on("error", () => {
-        console.log("error")
-    })
-
-    wallet.on("message", (e) => {
-        console.log(e)
-    })
-
-    wallet.on("change", () => {
-        console.log("change")
-    })
 
     await wallet.connect({chainId: config.nftchainId}).catch((e) => {
         message.value = e;
