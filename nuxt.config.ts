@@ -14,7 +14,11 @@ export default defineNuxtConfig({
   vite: {
     plugins: [nodePolyfills()]
   },
-  build: {
-    transpile: ['ethers/lib/utils'],
-  },
+  build: (() => {
+    if (process.env.NODE_ENV == 'production') {
+      return { transpile: ['ethers/lib/utils'] }
+    } else {
+      return {}
+    }
+  })()
 })
