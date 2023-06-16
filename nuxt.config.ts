@@ -13,5 +13,8 @@ export default defineNuxtConfig({
   },
   vite: {
     plugins: [nodePolyfills()]
-  }
+  },
+  build: {
+    transpile: ['ethers/lib/utils'],
+  },
 })
