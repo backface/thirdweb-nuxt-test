@@ -5,6 +5,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   runtimeConfig: {
     ETH_PRIVATE_KEY: process.env.ETH_PRIVATE_KEY,
+    THIRDWEB_API_KEY: process.env.THIRDWEB_API_KEY,
+    THIRDWEB_CLIENT_ID: process.env.THIRDWEB_CLIENT_ID,
     public: {
       nftchainId: 5,
       nftchain: 'goerli',

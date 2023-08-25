@@ -14,8 +14,9 @@
     "nuxt": "^3.5.2"
   },
   "dependencies": {
-    "@thirdweb-dev/sdk": "^3.10.21",
-    "@thirdweb-dev/wallets": "^0.2.26",
+    "@thirdweb-dev/sdk": "^3.10.55",
+    "@thirdweb-dev/wallets": "1.1.19",
+    "ethers": "^5",
     "vite-plugin-node-polyfills": "^0.9.0"
   }
 }

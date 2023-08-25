@@ -6,7 +6,12 @@ export default defineEventHandler(async (event) => {
         const body = await readBody(event)
         const { address, image, name, desc } = body;
 
-        const sdk = ThirdwebSDK.fromPrivateKey(config.ETH_PRIVATE_KEY, config.public.nftchain);  
+        const sdk = ThirdwebSDK.fromPrivateKey(
+          config.ETH_PRIVATE_KEY, 
+          config.public.nftchain, {
+            secretKey: config.THIRDWEB_API_KEY
+          }
+        );  
         const collection = await sdk.getContract(config.public.nftcontract);
         
         const signedPayload = await collection.erc721.signature.generate({
